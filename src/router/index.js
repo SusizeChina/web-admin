@@ -130,6 +130,35 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/system',
+    component: Layout,
+    redirect: '/system/user',
+    alwaysShow: false, // will always show the root menu
+    name: 'System',
+    meta: {
+      title: '系统管理',
+      icon: 'lock'
+    },
+    children: [
+      {
+        path: 'user',
+        component: () => import('@/views/system/user/index.vue'),
+        name: 'User',
+        meta: {
+          title: '用户管理', noCache: true
+        }
+      },
+      {
+        path: 'role',
+        component: () => import('@/views/system/user/index.vue'),
+        name: 'Role',
+        meta: {
+          title: '角色管理'
+        }
+      }
+    ]
+  },
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/page',

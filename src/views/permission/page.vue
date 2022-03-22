@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <div>test</div>
     <switch-roles @change="handleRolesChange" />
   </div>
 </template>
